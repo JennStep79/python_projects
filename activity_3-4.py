@@ -8,7 +8,7 @@ def flatten_and_sort(num_list):
             flat_list.append(i)
     return sorted(flat_list)
 
-print(flatten_and_sort([[3, 2, 1], [4, 5, 6]]))
+# print(flatten_and_sort([[3, 2, 1], [4, 5, 6]]))
 
 # how does this solution ensure data immutability?
 # it adds the flattened and sorted list to a new list, which doesn't change the original list
@@ -46,6 +46,18 @@ class SebulbasPod(Podracer):
 
     def flame_jet(self, other):
         other.condition = "trashed"
+
+pod = Podracer(200, "poor", 20000)
+pod.repair()
+print(pod.condition)
+
+new_pod = AnakinsPod(2, "good", 30000)
+new_pod.boost()
+print(new_pod.max_speed)
+
+third_pod = SebulbasPod(100, "fair", 10000)
+third_pod.flame_jet(third_pod)
+print(third_pod.condition)
 
 # Once an Object Oriented solution has been implemented, answer the following questions:
 # How does this solution demonstrate the four pillars of OOP? 
